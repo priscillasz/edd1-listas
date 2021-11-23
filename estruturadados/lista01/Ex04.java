@@ -2,10 +2,17 @@ package estruturadados.lista01;
 
 import java.util.Scanner;
 
+    /* Questão 4 da Lista 1 de EDD1
+    Utilizando as operações de manipulação de pilhas vistas em aula, assim como o código
+    de PilhaGenerica visto, use uma pilha auxiliar e uma variável do tipo T, para desenvolver
+    um procedimento que remova um dado objeto do tipo T de uma posição qualquer de uma
+    pilha. Para saber se dois objetos do tipo T são iguais, você deve usar o método equals (ou
+    compareTo). Note que você não pode acessar diretamente a estrutura interna da pilha
+    (atributos), devendo usar apenas as operações (métodos) de manipulação. */
+
 /* Testei removendo os elementos 3, 4 e 5 e funcionou, mas não deu certo removendo o 1 e o 2. */
 // tirando isso, tá tudo funcionando normalmente...
 
-// Questão 4 da Lista 1 de EDD1
 public class Ex04 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

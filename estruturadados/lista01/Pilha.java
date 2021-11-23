@@ -56,7 +56,7 @@ public class Pilha<T> {
             for (int i = 0; i < this.elementos.length; i++) {
                 elementosNovos[i] = this.elementos[i];
             }
-            this.elementos = elementosNovos; // atribuir o novo vetor ao vetor Vetor
+            this.elementos = elementosNovos;
         }
     }
 
@@ -65,8 +65,7 @@ public class Pilha<T> {
         return this.tamanho;
     }
 
-    // imprimir os elementos do vetor
-    @Override
+    @Override // imprimir os elementos do vetor
     public String toString() {
 
         StringBuilder s = new StringBuilder();

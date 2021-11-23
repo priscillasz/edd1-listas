@@ -3,16 +3,22 @@ package estruturadados.lista01;
 import java.util.Scanner;
 import java.util.Stack;
 
-// tirando o erro do retorno, tá tudo funcionando normalmente...
+// coloquei o método como void pq ele não estava retornando a string corretamente...
+// TODO: 22/11/2021 consertar o erro de não conseguir retornar a frase pra main
+
+    /* Questão 6 da Lista 1 de EDD1
+    * Elabore um método que retorne as letras invertidas das palavras de uma frase recebida
+    por parâmetro, preservando a ordem das palavras na frase. Por exemplo “a maçã está
+    podre”, deve ter como saída: “a ãçam átse erdop”. As operações básicas de uma pilha,
+    push e pop, devem ser usadas */
 
 public class Ex06 {
-    public static void reverteFrase(String frase) {
+    public static void inverteFrase(String frase) {
         Stack<Character> pilha = new Stack<>();
 
         char[] fraseInvertida = new char[frase.length()];
         int count = 0;
 
-        // TODO: 22/11/2021 consertar o erro de não conseguir retornar a frase pra main
         for (int i = 0; i < frase.length(); i++) {
             // empilha as letras de uma palavra de cada vez
             for (; i < frase.length() && frase.charAt(i) != ' '; i++) {
@@ -40,6 +46,6 @@ public class Ex06 {
         System.out.println("Frase a ser invertida: ");
         frase = scan.nextLine();
 
-        reverteFrase(frase);
+        inverteFrase(frase);
     }
 }

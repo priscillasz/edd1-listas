@@ -3,8 +3,6 @@ package estruturadados.lista01;
 import java.util.Scanner;
 import java.util.Stack;
 
-// TODO: 23/11/2021 colocar a parte do código em um método verifica()
-
     /* Questão 5 da Lista 1 de EDD1
     Escreva um programa que leia uma sequência de caracteres e determine se os
     parênteses, colchetes e chaves estão balanceados. Se a sequência não possuir esses
@@ -14,18 +12,7 @@ import java.util.Stack;
     “[abcde{efg]}” - Não balanceado */
 
 public class Ex05 {
-    public static boolean balanceado() {
-        return false;
-    }
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        // leitura da sequencia
-        System.out.println("Insira uma sequência de caracteres: ");
-        String sequencia = scan.nextLine();
-
-
+    public static boolean balanceado(String sequencia) {
         Stack<Character> stack = new Stack<>();
 
         //
@@ -36,9 +23,6 @@ public class Ex05 {
         char fecha1 = ')';
         char fecha2 = ']';
         char fecha3 = '}';
-        
-        //
-        boolean ehBalanceado = true;
 
         //
         for (int i = 0; i < sequencia.length(); i++) {
@@ -54,42 +38,46 @@ public class Ex05 {
             //
             else if (sequencia.charAt(i) == fecha1) {
                 if (stack.isEmpty()) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
                 if (stack.pop() != abre1) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
             }
 
             //
             else if (sequencia.charAt(i) == fecha2) {
                 if (stack.isEmpty()) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
                 if (stack.pop() != abre2) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
             }
 
             //
             else if (sequencia.charAt(i) == fecha3) {
                 if (stack.isEmpty()) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
                 if (stack.pop() != abre3) {
-                    ehBalanceado = false;
-                    break;
+                    return false;
                 }
             }
         }
 
-        //
-        if (ehBalanceado) {
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // leitura da sequencia
+        System.out.println("Insira uma sequência de caracteres: ");
+        String sequencia = scan.nextLine();
+
+        // verificação
+        if (balanceado(sequencia)) {
             System.out.println("A sequência está balanceada.");
         } else {
             System.out.println("A sequência não está balanceada.");
