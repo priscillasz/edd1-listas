@@ -1,7 +1,6 @@
 package estruturadados.lista01;
 
 import java.util.Scanner;
-import java.util.Stack;
 
     /* Questão 2 da Lista 1 de EDD1
     Escreva uma função para determinar se uma cadeia de caracteres (string) é da forma: a
@@ -12,6 +11,7 @@ import java.util.Stack;
 
     // EXEMPLO DE FORMATO CORRETO: ABABBACABBABADABABBACABBABADABABBACABBABA
     // EXEMPLO DE FORMATO ERRADO: ABABBACABBABADABBBBACABBABADABABBACABBABA
+    // OUTRO EXEMPLO DE FORMATO ERRADO: DABABBACABBABADABABBACABBABADABABBACABBABA (iniciando com D)
 
 public class Ex02 {
     // mesmo método da questão 1
@@ -56,31 +56,37 @@ public class Ex02 {
 
     // método que verifica a string inteira
     public static boolean verifica(String formD) {
+
         Pilha<Character> aux = new Pilha<>();
 
-        char[] caracteres = new char[13]; // coloquei 13 por conta do tamanho da string que eu usei para testar
-        int count;
+        char[] caracteres;
+        int count; // contador auxiliar
         boolean formato = true;
 
         for (int i = 0; i < formD.length(); i++) {
+            if (formD.charAt(0) == 'D') { // se a cadeia inicia com 'D', então já não está correta...
+                formato = false;
+                break;
+            }
             if (formD.charAt(i) != 'D') {
-                aux.empilha(formD.charAt(i));
+                aux.empilha(formD.charAt(i)); // empilha todos os chars até chegar no D
             } else if (formD.charAt(i) == 'D') { // if redundante: só pra eu visualizar direito
-                count = 0;
-                while (!aux.estaVazia()) {
+                count = 0; // contador é zerado toda vez que um novo char 'D' é encontrado
+                caracteres = new char[aux.tamanho()];
+                while (!aux.estaVazia()) { // desempilha os caracteres em um vetor de chars até esvaziar a pilha
                     caracteres[count] = aux.topo();
                     aux.desempilha();
                     count++;
                 }
-                String strAux = String.valueOf(caracteres);
-                System.out.println("String: "+strAux); // teste
-                if (!isXCY(strAux)) {
+                String strAux = String.valueOf(caracteres); // converte o vetor de chars em uma string
+                if (!isXCY(strAux)) { // verifica se a string está no formato xCy
                     formato = false;
                     break;
                 }
             }
         }
 
+        // verificação do retorno
         if (formato) {
             return true;
         } else {
@@ -95,7 +101,7 @@ public class Ex02 {
         System.out.println("Insira uma string no formato a D b D c D ... D z :");
         String formD = scan.nextLine();
 
-        // chamar o método
+        // verifica o formato
         if (verifica(formD)) {
             System.out.println("A cadeia está no formato correto.");
         } else {

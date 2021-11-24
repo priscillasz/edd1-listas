@@ -3,9 +3,6 @@ package estruturadados.lista01;
 import java.util.Scanner;
 import java.util.Stack;
 
-// coloquei o método como void pq ele não estava retornando a string corretamente...
-// TODO: 22/11/2021 consertar o erro de não conseguir retornar a frase pra main
-
     /* Questão 6 da Lista 1 de EDD1
     * Elabore um método que retorne as letras invertidas das palavras de uma frase recebida
     por parâmetro, preservando a ordem das palavras na frase. Por exemplo “a maçã está
@@ -13,7 +10,7 @@ import java.util.Stack;
     push e pop, devem ser usadas */
 
 public class Ex06 {
-    public static void inverteFrase(String frase) {
+    public static void inverteFrase(String frase) { // coloquei o método como void pq ele não estava retornando a string corretamente
         Stack<Character> pilha = new Stack<>();
 
         char[] fraseInvertida = new char[frase.length()];

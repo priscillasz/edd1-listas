@@ -7,7 +7,7 @@ toda uma pilha nunca seja deslocada para outro local dentro do vetor. */
 
 public class Ex03 {
     public static void main(String[] args) {
-        Pilha2x pilha = new Pilha2x(10);
+        DuasPilhas pilha = new DuasPilhas(10);
 
         pilha.push1(1);
         pilha.push2(10); //
@@ -19,9 +19,17 @@ public class Ex03 {
         pilha.push2(7); //
         pilha.push1(5);
         pilha.push2(6); //
-        pilha.push2(15);
+        pilha.push2(15); //
+        pilha.push1(11);
+        pilha.push1(15);
 
         System.out.println(pilha);
+
+        if (pilha.overflow()) {
+            System.out.println("Estouro!");
+        } else {
+            System.out.println("Não houve estouro ainda.");
+        }
 
 
     }

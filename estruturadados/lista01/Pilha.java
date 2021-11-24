@@ -1,23 +1,23 @@
 package estruturadados.lista01;
 
-// Pilha usada nos exercícios...
+// Pilha genérica usada nos exercícios 1, 2, 4,
 
 public class Pilha<T> {
     protected T[] elementos;
     protected int tamanho;
 
-    // construtor com parametro
+    // construtor com parâmetro
     public Pilha(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
     }
 
-    // construtor sem parametro
+    // construtor sem parâmetro
     public Pilha() {
         this(10);
     }
 
-    // checa se a pilha tá vazia
+    // isEmpty - checa se a pilha tá vazia
     public boolean estaVazia() {
         return this.tamanho == 0;
     }

@@ -13,9 +13,9 @@ import java.util.Stack;
 
 public class Ex05 {
     public static boolean balanceado(String sequencia) {
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<>(); // usei a API Stack ao invés de usar a classe Pilha
 
-        //
+        // parênteses, colchetes e chaves...
         char abre1 = '(';
         char abre2 = '[';
         char abre3 = '{';
@@ -24,9 +24,9 @@ public class Ex05 {
         char fecha2 = ']';
         char fecha3 = '}';
 
-        //
+        // loop que varre a sequencia
         for (int i = 0; i < sequencia.length(); i++) {
-            //
+            // empilha os caracteres de abertura: ( [ {
             if (sequencia.charAt(i) == abre1) {
                 stack.push(abre1);
             } else if (sequencia.charAt(i) == abre2) {
@@ -72,7 +72,7 @@ public class Ex05 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // leitura da sequencia
+        // leitura da sequência
         System.out.println("Insira uma sequência de caracteres: ");
         String sequencia = scan.nextLine();
 
