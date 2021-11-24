@@ -1,30 +1,13 @@
 package estruturadados.lista01;
 
-    /* Questão 7 da Lista 1 de EDD1
-    Em sala de aula, aprendemos a avaliar uma expressão aritmética que estivesse em
-    notação pós-fixada, que não faz uso de parênteses por não possuir ambiguidade na sua
-    avaliação. Neste exercício, você deve utilizar o conceito de Pilha para realizar a avaliação
-    de expressões aritméticas em notação infixa, isto é, aquela que aprendemos e utilizamos ao
-    longo do Ensino Fundamental e do Ensino Médio. Nesse contexto, vamos usar a seguintedefinição recursiva:
-    uma expressão aritmética é um número, ou um parêntese esquerdo
-    seguido de uma expressão aritmética seguida por um operador seguido por outra expressão
-    aritmética seguida de um parêntese direito. Por simplicidade, essa definição assume que a
-    expressão está completamente parentizada, especificando precisamente quais operadores
-    devem ser aplicados a quais operandos e removendo possíveis ambiguidades na avaliação.
-    Por exemplo, a expressão ( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) ) segue essa definição.
-    Você deve então implementar um método que realize a avaliação de tais expressões
-    representadas em uma String usando o conceito de Pilha. Por fim, cabe citar que o código
-    que voces vão desenvolver corresponde a um exemplo simples de um interpretador: um
-    programa que interpreta uma computação especificada por uma string e realiza tal
-    computação para chegar ao resultado. */
-
 import java.util.Scanner;
 import java.util.Stack;
 
 // 1- A expressão infix é convertida para postfix
 // 2- O resultado da expressão postfix é computado (com a classe Posfixada)
 
-public class Ex07 {
+public class Teste {
+
     // retorna precedencia do operador
     static int precedencia(char ch)
     {

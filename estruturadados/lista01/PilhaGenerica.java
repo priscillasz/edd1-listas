@@ -36,7 +36,7 @@ public class PilhaGenerica<T> {
         else
         {
             // Impressão
-            System.out.println("Pilha vazia: pop nao funcionou.");
+            // System.out.println("Pilha vazia: pop nao funcionou.");
             return null;
         }
     }
