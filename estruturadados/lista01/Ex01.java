@@ -56,13 +56,10 @@ public class Ex01 {
         System.out.println("Insira uma string no formato xCy:");
         String xCy = scan.nextLine();
 
-        isXCY(xCy);
-
         if (isXCY(xCy)) {
             System.out.println("Está na forma xCy.");
         } else {
             System.out.println("Não está na forma xCy.");
         }
-
     }
 }

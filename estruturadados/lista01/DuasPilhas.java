@@ -3,8 +3,6 @@ package estruturadados.lista01;
 import java.util.Arrays;
 
 // Usada na questão 3 da lista 1 de EDD1
-// **não implementei os métodos pop1 e pop2;
-
 public class DuasPilhas {
     int[] array;
     int size;
@@ -39,6 +37,28 @@ public class DuasPilhas {
             overflow2 = true;
         }
    }
+
+    // desempilhar 1
+    void pop1() {
+        if (top1 <= size / 2)  {
+            int x = array[top1];
+            if (this.top1 > 0) {
+                overflow1 = false;
+            }
+            top1++;
+        }
+    }
+
+    // desempilhar 2
+    void pop2() {
+        if (top2 >= size / 2 + 1) {
+            int x = array[top2];
+            if (top2 < size-1) {
+                overflow2 = false;
+            }
+            top2--;
+        }
+    }
 
    // verificar se houve overflow (dos dois lados ao mesmo tempo)
    boolean overflow() {

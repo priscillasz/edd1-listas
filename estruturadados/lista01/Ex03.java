@@ -22,6 +22,11 @@ public class Ex03 {
         pilha.push2(15); //
         pilha.push1(11);
         pilha.push1(15);
+        pilha.push1(123);
+        //pilha.pop1();
+        //pilha.pop1();
+        //pilha.pop2();
+        //pilha.pop2();
 
         System.out.println(pilha);
 
@@ -30,7 +35,5 @@ public class Ex03 {
         } else {
             System.out.println("Não houve estouro ainda.");
         }
-
-
     }
 }

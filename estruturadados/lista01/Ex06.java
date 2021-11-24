@@ -35,7 +35,7 @@ public class Ex06 {
         System.out.println(fraseInvertida);
     }
 
-    public static void main(String[] args) { // Ex06 da Lista 1 de EDD1
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
         String frase;

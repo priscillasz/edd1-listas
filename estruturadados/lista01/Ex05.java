@@ -24,7 +24,7 @@ public class Ex05 {
         char fecha2 = ']';
         char fecha3 = '}';
 
-        // loop que varre a sequencia
+        // loop que varre a sequência
         for (int i = 0; i < sequencia.length(); i++) {
             // empilha os caracteres de abertura: ( [ {
             if (sequencia.charAt(i) == abre1) {
@@ -35,7 +35,6 @@ public class Ex05 {
                 stack.push(abre3);
             }
 
-            //
             else if (sequencia.charAt(i) == fecha1) {
                 if (stack.isEmpty()) {
                     return false;
@@ -45,7 +44,6 @@ public class Ex05 {
                 }
             }
 
-            //
             else if (sequencia.charAt(i) == fecha2) {
                 if (stack.isEmpty()) {
                     return false;
@@ -55,7 +53,6 @@ public class Ex05 {
                 }
             }
 
-            //
             else if (sequencia.charAt(i) == fecha3) {
                 if (stack.isEmpty()) {
                     return false;

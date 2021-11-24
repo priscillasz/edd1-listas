@@ -26,10 +26,9 @@ import java.util.Stack;
 
 public class Ex07 {
     // retorna precedencia do operador
-    static int precedencia(char ch)
+    public static int precedencia(char ch)
     {
-        switch (ch)
-        {
+        switch (ch) {
             case '+':
             case '-':
                 return 1;
@@ -45,11 +44,11 @@ public class Ex07 {
     }
 
     // converte a expressão infixa para posfixa
-    static String conversao(String exp)
+    public static String conversao(String exp)
     {
-        String resultado = new String("");
+        String resultado = new String(""); // string vazia para armazenar o resultado
 
-        Stack<Character> pilha = new Stack<>();
+        Stack<Character> pilha = new Stack<>(); // stack que armazena Caracteres
 
         for (int i = 0; i < exp.length(); ++i) {
             char c = exp.charAt(i);

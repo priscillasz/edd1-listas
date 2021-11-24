@@ -23,7 +23,7 @@ public class Ex08 {
         // cria a array
         int[] arr = new int[n];
 
-        // Ler os números
+        // Leitura dos números
         for (int i = 0; i < n; i++) {
             System.out.println("Número "+(i+1)+":");
             arr[i] = scan.nextInt();
@@ -38,6 +38,7 @@ public class Ex08 {
         //
         for (int i = 0; i < n - 1; ++i) {
 
+            // compara quem é o maior e o menor entre dois elementos
             int maior = Math.max(arr[i], arr[i + 1]);
             int menor = Math.min(arr[i], arr[i + 1]); // segundo maior, no caso
 

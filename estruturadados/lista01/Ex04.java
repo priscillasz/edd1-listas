@@ -10,10 +10,10 @@ import java.util.Scanner;
     compareTo). Note que você não pode acessar diretamente a estrutura interna da pilha
     (atributos), devendo usar apenas as operações (métodos) de manipulação. */
 
-// Testei removendo os elementos 3, 4 e 5 e funcionou, mas não deu certo removendo o 1 e o 2 (acaba removendo o último elemento).
-// Não testei com um número que não existe na pilha.
-
 public class Ex04 {
+    // Testei removendo os elementos 3, 4 e 5 e funcionou, mas não deu certo removendo o 1 e o 2 (acaba removendo o último elemento).
+    // Não testei com um número que não existe na pilha.
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
