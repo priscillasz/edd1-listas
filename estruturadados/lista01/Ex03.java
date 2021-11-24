@@ -1,6 +1,10 @@
 package estruturadados.lista01;
 
-// Questão 3 da Lista 1 de EDD1
+/* Questão 3 da Lista 1 de EDD1
+* Desenvolva um método para manter duas pilhas dentro de um único vetor (array) de
+modo que nenhuma das pilhas incorra em estouro até que toda a memória seja usada, e
+toda uma pilha nunca seja deslocada para outro local dentro do vetor. */
+
 public class Ex03 {
     public static void main(String[] args) {
         Pilha2x pilha = new Pilha2x(10);
