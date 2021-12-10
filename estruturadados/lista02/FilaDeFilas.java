@@ -2,17 +2,18 @@ package estruturadados.lista02;
 
 import java.util.Arrays;
 
-public class Fila {
+// Questão 3, lista 2
+public class FilaDeFilas {
     /* Atributos protected para serem usados na subclasse. */
     protected int tamanho;	/* Tamanho do vetor */
-    protected int[] vetor;	/* Vetor de elementos */
+    protected Fila[] vetor;	/* Vetor de elementos */
     protected int ini;	/* Posicao do proximo elemento a ser retirado */
     protected int n;	/* Numero de elementos na fila */
 
-    public Fila(int tam)
+    public FilaDeFilas(int tam)
     {
         tamanho = tam;
-        vetor = new int[tamanho];
+        vetor = new Fila[tamanho];
         ini = 0;
         n = 0;
     }
@@ -26,8 +27,8 @@ public class Fila {
     }
 
     // Retiramos o elemento do início da fila
-    public int remove() {
-        int elemento = Integer.MIN_VALUE;
+    public Fila remove() {
+        Fila elemento = null;
 
         if (!this.vazia()) {
             elemento = vetor[ini];
@@ -39,7 +40,7 @@ public class Fila {
     }
 
     // Inserimos o elemento no final da fila
-    public boolean insere(int elemento) {
+    public boolean insere(Fila elemento) {
         int fim;
 
         if (!cheia()) {
@@ -49,28 +50,6 @@ public class Fila {
             return true;
         } else
             return false;
-    }
-
-    // Questão 02
-    public void combinaFilas(Fila f1, Fila f2) {
-        int tamanhoMista = f1.tamanho + f2.tamanho;
-        Fila mista = new Fila(tamanhoMista);
-
-        while (!f1.vazia() || !f2.vazia()) {
-            if (!f1.vazia()) {
-                mista.insere(f1.remove());
-            }
-            if (!f2.vazia()) {
-                mista.insere(f2.remove());
-            }
-        }
-
-        System.out.println("Fila mista:");
-        System.out.println(mista);
-
-        // não consegui deixar f1 e f2 vazias ao final
-        System.out.println("f1 ao final: "+f1);
-        System.out.println("f2 ao final: "+f2);
     }
 
     @Override

@@ -1,21 +1,19 @@
 package estruturadados.lista02;
 
-// utilizada na questão 6 da lista 2
-// código da Fila disponibilizado no moodle, só que agora é uma fila genérica
-
 import java.util.Arrays;
 
-public class FilaGenerica<T> {
+// Questão 3, lista 2
+public class FilaDePilhas {
     /* Atributos protected para serem usados na subclasse. */
     protected int tamanho;	/* Tamanho do vetor */
-    protected T[] vetor;	/* Vetor de elementos */
+    protected Pilha[] vetor;	/* Vetor de elementos */
     protected int ini;	/* Posicao do proximo elemento a ser retirado */
     protected int n;	/* Numero de elementos na fila */
 
-    public FilaGenerica(int tam)
+    public FilaDePilhas(int tam)
     {
         tamanho = tam;
-        vetor = (T[]) new Object[tamanho];
+        vetor = new Pilha[tamanho];
         ini = 0;
         n = 0;
     }
@@ -29,9 +27,9 @@ public class FilaGenerica<T> {
     }
 
     //Retiramos o elemento do in�cio da fila
-    public T remove() {
+    public Pilha remove() {
         // int elemento = Integer.MIN_VALUE;
-        T elemento = null; //
+        Pilha elemento = null; //
         if (!this.vazia())
         {
             elemento = vetor[ini];
@@ -43,10 +41,10 @@ public class FilaGenerica<T> {
     }
 
     //Inserimos o elemento no final da fila
-    public boolean insere(T elemento) {
+    public boolean insere(Pilha elemento) {
         int fim;
 
-        if (!cheia()) {
+        if ( !cheia() ) {
             fim = (ini + n) % tamanho;
             vetor[fim] = elemento;
             n++;

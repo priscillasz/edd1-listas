@@ -1,5 +1,39 @@
 package estruturadados.lista02;
 
-public class Processo {
-    private int id;
+// Questão 1, lista 2
+public class Processo implements Comparable<Processo> {
+    private int id; // número identificador
+    private int tempoEspera;
+
+    // construtor
+    public Processo(int id, int tempoEspera) {
+        this.id = id;
+        this.tempoEspera = tempoEspera;
+    }
+
+    @Override
+    public String toString() {
+        return "Processo {" +
+                "id = " + id +
+                ", tempo de espera = " + tempoEspera +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Processo o) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Processo processo = (Processo) o;
+        return id == processo.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
