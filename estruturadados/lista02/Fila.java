@@ -40,7 +40,7 @@ public class Fila {
     public boolean insere(int elemento) {
         int fim;
 
-        if (!cheia()) { //
+        if (!cheia()) {
             fim = (ini + n) % tamanho;
             vetor[fim] = elemento;
             n++;
@@ -53,19 +53,21 @@ public class Fila {
     public void inserePrioridade(int elemento) {
         insere(elemento);
 
+        // array auxiliar
         int[] templist = new int[tamanho];
 
+        // remove os clientes da fila circular e coloca na array temporaria
         for (int i = 0; i < n; i++) {
             templist[i] = remove();
         }
 
+        // ordena os clientes na array temporária de acordo com a prioridade
+        // 1- idoso 2- adulto
         Arrays.sort(templist);
 
-        // System.out.println(Arrays.toString(templist));
+        //Arrays.sort(vetor);
 
-        System.out.println("sorted");
-        Arrays.sort(vetor);
-        // System.out.println(vetor);
+        System.out.println(toString());
 
         for (int i = 0; i < n; i++) {
             insere(templist[i]);
