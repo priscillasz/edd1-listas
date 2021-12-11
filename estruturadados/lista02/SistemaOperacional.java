@@ -31,9 +31,17 @@ public class SistemaOperacional {
         int fim;
 
         if (!cheia()) {
+            Comparable<Processo> chave = (Comparable<Processo>) processo;
+
+            int i;
+            for (i = 0; i < this.tamanho; i++) {
+                if (chave.compareTo(this.vetor[i]) < 0) {
+                    break;
+                }
+            }
 
             fim = (ini + n) % tamanho;
-            vetor[fim] = processo;
+            vetor[fim] = processo; // era fim
             n++;
             return true;
         } else

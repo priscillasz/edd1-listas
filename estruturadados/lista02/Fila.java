@@ -25,7 +25,6 @@ public class Fila {
         return (n == tamanho);
     }
 
-    // Retiramos o elemento do início da fila
     public int remove() {
         int elemento = Integer.MIN_VALUE;
 
@@ -38,17 +37,39 @@ public class Fila {
         return elemento;
     }
 
-    // Inserimos o elemento no final da fila
     public boolean insere(int elemento) {
         int fim;
 
-        if (!cheia()) {
+        if (!cheia()) { //
             fim = (ini + n) % tamanho;
             vetor[fim] = elemento;
             n++;
             return true;
         } else
             return false;
+    }
+
+    // Questão 05
+    public void inserePrioridade(int elemento) {
+        insere(elemento);
+
+        int[] templist = new int[tamanho];
+
+        for (int i = 0; i < n; i++) {
+            templist[i] = remove();
+        }
+
+        Arrays.sort(templist);
+
+        // System.out.println(Arrays.toString(templist));
+
+        System.out.println("sorted");
+        Arrays.sort(vetor);
+        // System.out.println(vetor);
+
+        for (int i = 0; i < n; i++) {
+            insere(templist[i]);
+        }
     }
 
     // Questão 02
