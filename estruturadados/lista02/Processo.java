@@ -21,11 +21,16 @@ public class Processo implements Comparable<Processo> {
 
     @Override
     public int compareTo(Processo o) {
+        if (this.tempoEspera > o.tempoEspera) {
+            return 1;
+        } else if (this.tempoEspera < o.tempoEspera) {
+            return -1;
+        }
         return 0;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) { // não foi usado
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Processo processo = (Processo) o;

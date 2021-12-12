@@ -9,8 +9,9 @@ public class Fila {
     protected int ini;	/* Posicao do proximo elemento a ser retirado */
     protected int n;	/* Numero de elementos na fila */
 
-    public Fila(int tam)
-    {
+    protected int[] templist; // ex 05
+
+    public Fila(int tam) {
         tamanho = tam;
         vetor = new int[tamanho];
         ini = 0;
@@ -23,6 +24,12 @@ public class Fila {
 
     public boolean cheia() {
         return (n == tamanho);
+    }
+
+    public int topo() {
+        ini = (ini + 1) % tamanho;
+
+        return vetor[ini];
     }
 
     public int remove() {
@@ -49,31 +56,6 @@ public class Fila {
             return false;
     }
 
-    // Questão 05
-    public void inserePrioridade(int elemento) {
-        insere(elemento);
-
-        // array auxiliar
-        int[] templist = new int[tamanho];
-
-        // remove os clientes da fila circular e coloca na array temporaria
-        for (int i = 0; i < n; i++) {
-            templist[i] = remove();
-        }
-
-        // ordena os clientes na array temporária de acordo com a prioridade
-        // 1- idoso 2- adulto
-        Arrays.sort(templist);
-
-        //Arrays.sort(vetor);
-
-        System.out.println(toString());
-
-        for (int i = 0; i < n; i++) {
-            insere(templist[i]);
-        }
-    }
-
     // Questão 02
     public void combinaFilas(Fila f1, Fila f2) {
         int tamanhoMista = f1.tamanho + f2.tamanho;
@@ -94,6 +76,44 @@ public class Fila {
         // não consegui deixar f1 e f2 vazias ao final
         System.out.println("f1 ao final: "+f1);
         System.out.println("f2 ao final: "+f2);
+    }
+
+    // Questão 05
+    public void prioridade(Fila fila) {
+        // array auxiliar
+        templist = new int[tamanho];
+
+        // remove os clientes da fila circular e coloca na array temporaria
+        for (int i = 0; i < tamanho; i++) {
+            templist[i] = fila.remove();
+        }
+
+        // ordena
+        ordenar(templist);
+
+        // adiciona dnv na fila
+        for (int i = 0; i < tamanho; i++) {
+            fila.insere(templist[i]);
+        }
+
+        System.out.println("Fila de clientes ordenada por prioridade: "+fila);
+    }
+
+    // ex05 ordenar
+    public void ordenar(int[] v) {
+        for (int i = 0; i < v.length - 1; i++) {
+            boolean estaOrdenado = true;
+            for (int j = 0; j < v.length - 1 - i; j++) {
+                if (v[j] > v[j + 1]) {
+                    int aux = v[j];
+                    v[j] = v[j + 1];
+                    v[j + 1] = aux;
+                    estaOrdenado = false;
+                }
+            }
+            if (estaOrdenado)
+                break;
+        }
     }
 
     @Override
