@@ -37,6 +37,7 @@ public class Fila {
 
         if (!this.vazia()) {
             elemento = vetor[ini];
+            vetor[ini] = 0;
             ini = (ini + 1) % tamanho;
             n--;
         }
