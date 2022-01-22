@@ -45,6 +45,8 @@ public class ListaGenerica<T> {
     }
 
     /////// QUESTÃO 04
+    // Ao invés de cada novo elemento ser inserido no início da lista, são inseridos ao final,
+    // fazendo com que a frase fique na ordem
     public void insereFim(T novo) {
         Elo p = new Elo(novo);
 

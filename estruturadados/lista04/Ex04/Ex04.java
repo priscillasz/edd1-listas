@@ -10,6 +10,7 @@ public class Ex04 {
     public static void main(String[] args) {
         ListaGenerica<String> frase = new ListaGenerica<>();
 
+        // Cada token é inserido ao final da lista encadeada
         frase.insereFim("Bom");
         frase.insereFim(" ");
         frase.insereFim("dia");

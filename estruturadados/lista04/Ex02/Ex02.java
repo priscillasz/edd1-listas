@@ -7,6 +7,8 @@ public class Ex02 {
     /* Complexidade: O(m+n), pois as duas listas (lista1 e lista2) estão sendo percorridas.
         No caso, m e n correspondem ao tamanho de cada uma dessas listas. */
 
+    /* */
+
     public static void main(String[] args) {
         ListaOrdenada lista1 = new ListaOrdenada();
         ListaOrdenada lista2 = new ListaOrdenada();
@@ -19,6 +21,6 @@ public class Ex02 {
         lista2.insere(2);
         lista2.insere(20);
 
-        lista1.merge(lista1, lista2);
+        lista1.intercala(lista1, lista2);
     }
 }

@@ -46,29 +46,29 @@ public class ListaOrdenada extends Lista
 
     /////////////////////////////////////////////////////////////////////////////////////////
     // QUESTÃO 2
-    Elo sortedMerge(Elo headA, Elo headB) {
+    Elo intercalaOrdenada(Elo prim1, Elo prim2) {
 
         Elo dummyElo = new Elo(0);
 
         Elo tail = dummyElo;
 
         while (true) {
-            if (headA == null) {
-                tail.prox = headB;
+            if (prim1 == null) {
+                tail.prox = prim2;
                 break;
             }
-            if (headB == null) {
-                tail.prox = headA;
+            if (prim2 == null) {
+                tail.prox = prim1;
                 break;
             }
 
             //
-            if (headA.dado <= headB.dado) {
-                tail.prox = headA;
-                headA = headA.prox;
+            if (prim1.dado <= prim2.dado) {
+                tail.prox = prim1;
+                prim1 = prim1.prox;
             } else {
-                tail.prox = headB;
-                headB = headB.prox;
+                tail.prox = prim2;
+                prim2 = prim2.prox;
             }
 
             tail = tail.prox;
@@ -77,11 +77,11 @@ public class ListaOrdenada extends Lista
         return dummyElo.prox;
     }
 
-    public void merge(ListaOrdenada l1, ListaOrdenada l2) {
+    public void intercala(ListaOrdenada l1, ListaOrdenada l2) {
         l1.imprime();
         l2.imprime();
 
-        l1.prim = sortedMerge(l1.prim, l2.prim);
+        l1.prim = intercalaOrdenada(l1.prim, l2.prim);
 
         l1.imprime();
     }

@@ -27,4 +27,10 @@ public class Inimigo {
     public void setDanoPorSegundo(double danoPorSegundo) {
         this.danoPorSegundo = danoPorSegundo;
     }
+
+    @Override
+    public String toString() {
+        return "Vida = " + vida +
+                ", Dano por segundo = " + danoPorSegundo;
+    }
 }

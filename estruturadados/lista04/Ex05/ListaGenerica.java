@@ -42,10 +42,8 @@ public class ListaGenerica {
     public void imprime() {
         Elo p;
 
-        System.out.println("Elementos da lista:");
-
         for(p = prim; p != null; p = p.prox) {
-            System.out.print(p.dado + " ");
+            System.out.print(p.dado);
         }
 
         System.out.println();
@@ -64,6 +62,7 @@ public class ListaGenerica {
     public Elo inverte() {
         Elo inv = prim;
 
+        // percorre os elos, invertendo o que estiver contido em cada um:
         while (inv != null) {
             inv.dado = invertePalavra(inv.dado);
             inv = inv.prox;

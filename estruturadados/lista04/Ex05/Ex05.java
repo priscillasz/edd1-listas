@@ -16,8 +16,11 @@ public class Ex05 {
         // cada palavra é inserida na head da linked list, então já estão invertidas, a não ser que
         // tivessemos escolhido inserir as palavras ao final da lista
         frase.insere("Estruturas");
+        frase.insere(" ");
         frase.insere("de");
+        frase.insere(" ");
         frase.insere("Dados");
+        frase.insere("!");
 
         System.out.println("Lista invertida:");
         frase.imprime();
@@ -25,6 +28,8 @@ public class Ex05 {
         // agora, basta inverter a ordem das letras em cada uma dessas palavras
         frase.inverte();
 
+        // imprimindo novamente após inverter...
+        System.out.println("Letras invertidas:");
         frase.imprime();
     }
 }

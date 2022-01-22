@@ -44,9 +44,26 @@ public class ListaInimigos<Inimigos> {
         return null;
     }
 
-    public int efetuarDano(Inimigo inimigo, double dano) {
+    public boolean efetuarDano(Inimigo inimigo, double dano) {
+        // dano precisa ser um valor maior ou igual a zero
+        if (dano < 0) {
+            System.out.println("Entrada inválida");
+            return false;
+        }
+        if (dano >= inimigo.getVida()) { // se o dano for maior ou igual a vida do inimigo, ele é removido
+            remover(inimigo);
+            System.out.println("Inimigo removido.");
+            return false;
+        } else if (inimigo.getVida() == 0) { // se a vida do inimigo estiver em 0, ele também é removido
+            remover(inimigo);
+            System.out.println("Inimigo removido.");
+            return false;
+        }
 
-        return 0;
+        int novaVida = inimigo.getVida() - (int) dano;
+        inimigo.setVida(novaVida);
+        System.out.println("Vida restante: "+inimigo.getVida());
+        return true;
     }
 
     public boolean remover(Inimigo inimigo) {
@@ -70,6 +87,20 @@ public class ListaInimigos<Inimigos> {
         p = null;
 
         return true;
+    }
+
+    public void imprime() {
+        Elo p;
+        
+        int i = 1;
+        System.out.println("Lista de inimigos:");
+        for(p = prim; p != null; p = p.prox) {
+            System.out.print("Inimigo "+ i + ": "+ p.dado + " ");
+            System.out.println();
+            i++;
+        }
+
+        System.out.println();
     }
 }
 

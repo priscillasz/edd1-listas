@@ -104,7 +104,7 @@ public class ListaGenerica<T> {
     public void imprime() {
         Elo p;
 
-        System.out.println("Elementos da lista:");
+        System.out.println("Nomes em ordem alfabética:");
 
         for(p = prim; p != null; p = p.prox) {
             System.out.print(p.dado + " ");
