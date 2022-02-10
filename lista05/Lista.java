@@ -1,4 +1,4 @@
-package estruturadados.lista04.Ex02;
+package lista05;
 
 public class Lista {
     /* Referência para primeiro elemento */

@@ -1,4 +1,4 @@
-package estruturadados.lista04.Ex02;
+package estruturadados.lista04;
 
 public class ListaOrdenada extends Lista
 {
@@ -45,8 +45,8 @@ public class ListaOrdenada extends Lista
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////
-    // QUESTÃO 2
-    Elo intercalaOrdenada(Elo prim1, Elo prim2) {
+    /* QUESTÃO 2 */
+    public Elo intercalaOrdenada(Elo prim1, Elo prim2) {
 
         Elo dummyElo = new Elo(0);
 

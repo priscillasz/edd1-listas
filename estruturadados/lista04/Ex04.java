@@ -1,4 +1,4 @@
-package estruturadados.lista04.Ex04;
+package estruturadados.lista04;
 
 /* 4) Suponha que uma frase é representada por uma lista encadeada, sendo que cada elo
 contém uma string representando um token, isto é, um caracter de pontuação ou uma

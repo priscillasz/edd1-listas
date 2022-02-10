@@ -1,5 +1,4 @@
-package estruturadados.lista04.Ex03;
-
+package estruturadados.lista04;
 
 public class ListaOrdenadaGenerica<T extends Comparable<T>> extends ListaGenerica<T> {
     public void insere(T novo) {
@@ -43,3 +42,4 @@ public class ListaOrdenadaGenerica<T extends Comparable<T>> extends ListaGeneric
         return true;
     }
 }
+

@@ -1,6 +1,6 @@
-package estruturadados.lista04.Ex05;
+package estruturadados.lista04;
 
-public class ListaGenerica {
+public class ListaString {
     protected Elo prim; /* Referência para primeiro elemento */
 
     protected class Elo {
@@ -22,7 +22,7 @@ public class ListaGenerica {
         }
     }
 
-    public ListaGenerica() {
+    public ListaString() {
         prim = null;
     }
 

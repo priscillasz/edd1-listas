@@ -1,4 +1,4 @@
-package estruturadados.lista04.Ex03;
+package estruturadados.lista04;
 
 public class ListaGenerica<T> {
     /* Referência para primeiro elemento */
@@ -9,13 +9,11 @@ public class ListaGenerica<T> {
         protected T dado;
         protected Elo prox;
 
-        public Elo()
-        {
+        public Elo() {
             prox = null;
         }
 
-        public Elo(T elem)
-        {
+        public Elo(T elem) {
             dado = elem;
             prox = null;
         }
@@ -26,14 +24,12 @@ public class ListaGenerica<T> {
         }
     }
 
-    public ListaGenerica()
-    {
+    public ListaGenerica() {
         prim = null;
     }
 
     /* Testa se a lista está vazia. */
-    public boolean vazia()
-    {
+    public boolean vazia() {
         return prim == null;
     }
 
@@ -48,9 +44,8 @@ public class ListaGenerica<T> {
     public boolean busca(T elem) {
         Elo p;
 
-        for(p = prim; p != null; p = p.prox)
-        {
-            if(p.dado == elem)
+        for (p = prim; p != null; p = p.prox) {
+            if (p.dado == elem)
                 return true;
         }
 
@@ -58,19 +53,18 @@ public class ListaGenerica<T> {
     }
 
     /* Implementação recursiva do método de busca. */
-    public boolean buscaRecursiva(T elem)
-    {
-        if(this.vazia())
+    public boolean buscaRecursiva(T elem) {
+        if (this.vazia())
             return false;
 
         return buscaRecursiva(elem, prim);
     }
 
     private boolean buscaRecursiva(T elem, Elo p) {
-        if(p == null)
+        if (p == null)
             return false;
 
-        if(p.dado == elem)
+        if (p.dado == elem)
             return true;
 
         return buscaRecursiva(elem, p.prox);
@@ -81,7 +75,7 @@ public class ListaGenerica<T> {
         Elo p;
         Elo ant = null; /* Referência para anterior. */
 
-        for(p = prim; ((p != null) && (p.dado != elem)); p = p.prox)
+        for (p = prim; ((p != null) && (p.dado != elem)); p = p.prox)
             ant = p;
 
         /* Se p é null, então não encontrou elemento. */
@@ -106,7 +100,7 @@ public class ListaGenerica<T> {
 
         System.out.println("Nomes em ordem alfabética:");
 
-        for(p = prim; p != null; p = p.prox) {
+        for (p = prim; p != null; p = p.prox) {
             System.out.print(p.dado + " ");
         }
 
@@ -114,11 +108,10 @@ public class ListaGenerica<T> {
     }
 
     /* Implementação recursiva da função de impressão. */
-    public void imprimeRecursivo()
-    {
+    public void imprimeRecursivo() {
         System.out.println("Elementos da lista:");
 
-        if(this.vazia())
+        if (this.vazia())
             return;
 
         imprimeRecursivo(prim);
@@ -126,9 +119,8 @@ public class ListaGenerica<T> {
         System.out.println();
     }
 
-    private void imprimeRecursivo(Elo p)
-    {
-        if(p == null)
+    private void imprimeRecursivo(Elo p) {
+        if (p == null)
             return;
 
         System.out.print(p.dado + " ");
@@ -141,7 +133,7 @@ public class ListaGenerica<T> {
         int tam = 0;
         Elo p = prim;
 
-        while(p != null) {
+        while (p != null) {
             tam++;
             p = p.prox;
         }
@@ -151,16 +143,45 @@ public class ListaGenerica<T> {
 
     /* Calcula e retorna o tamanho da lista de maneira recursiva. */
     public int tamanhoRecursivo() {
-        if(this.vazia())
+        if (this.vazia())
             return 0;
 
         return tamanhoRecursivo(prim);
     }
 
     private int tamanhoRecursivo(Elo p) {
-        if(p == null)
+        if (p == null)
             return 0;
 
         return 1 + tamanhoRecursivo(p.prox);
     }
+
+    /////// QUESTÃO 04
+    // Ao invés de cada novo elemento ser inserido no início da lista, são inseridos ao final,
+    // fazendo com que a frase fique na ordem
+    public void insereFim(T novo) {
+        Elo p = new Elo(novo);
+
+        if (prim == null) {
+            prim = p;
+            tail = p;
+        } else {
+            tail.prox = p;
+            tail = p;
+        }
+    }
+
+    public void imprimeFim() { // QUESTÃO 04
+        Elo current = prim;
+        if (prim == null) {
+            System.out.println("Lista vazia");
+            return;
+        }
+        while (current != null) {
+            System.out.print(current.dado);
+            current = current.prox;
+        }
+    }
 }
+    //////////////
+

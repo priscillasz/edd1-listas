@@ -1,4 +1,4 @@
-package estruturadados.lista04.Ex03;
+package estruturadados.lista04;
 
 /* 3) Implemente uma lista ordenada genérica (usando Generics de Java) que armazene
 nomes em ordem alfabética. Lembre-se de manter a prioridade de ordenação da lista nos
@@ -47,9 +47,7 @@ public class Ex03 {
         } while(stop != 0);
 
         // teste
-        lista.imprime();
-
-        // teste
+        // lista.imprime();
         /*lista.insere("Charizard");
         lista.insere("Bulbasaur");
         lista.insere("Ivysaur");
