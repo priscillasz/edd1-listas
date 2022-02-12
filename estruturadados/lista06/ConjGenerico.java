@@ -185,43 +185,6 @@ public class ConjGenerico<T extends Comparable<T>>
         return inter;
     }
 
-    /* Exercício de aula: realizar a operação de diferença entre conjuntos. */
-    public ConjGenerico<T> diferenca(ConjGenerico<T> conj2)
-    {
-        Elo p1 = prim;
-        Elo p2 = conj2.prim;
-        Elo q, ult = null;
-
-        ConjGenerico<T> dif = new ConjGenerico<T>();
-
-        while (p1 != null)
-        {
-            if ((p2 == null) || (p1.dado.compareTo(p2.dado) < 0))
-            {
-                q = new Elo(p1.dado);
-                p1 = p1.prox;
-
-                if (ult == null)
-                    dif.prim = q;
-                else
-                    ult.prox = q;
-
-                ult = q;
-            }
-            else if(p2.dado.compareTo(p1.dado) < 0)
-            {
-                p2 = p2.prox;
-            }
-            else
-            {
-                p1 = p1.prox;
-                p2 = p2.prox;
-            }
-        }
-
-        return dif;
-    }
-
     /* Retorna cardinalidade do conjunto */
     public int tamanho() {
         int tam = 0;
@@ -270,7 +233,6 @@ public class ConjGenerico<T extends Comparable<T>>
                 prim2 = prim2.prox;
             }
         }
-
         return comp;
     }
 
@@ -301,34 +263,34 @@ public class ConjGenerico<T extends Comparable<T>>
 
         Elo prim1 = this.prim;
         Elo prim2 = conj2.prim;
-
-        Elo q = null;
         Elo ult = null;
+        Elo aux;
 
         ConjGenerico<T> diferenca = new ConjGenerico<>();
 
         while (prim1 != null) {
-            if ((prim1.dado.compareTo(prim2.dado) < 0) || (prim2 == null)) {
-                q = new Elo(prim1.dado);
+            if (prim1.dado.compareTo(prim2.dado) == 0) {
+                prim1 = prim1.prox;
+                prim2 = prim2.prox;
+
+            } else if (prim1.dado.compareTo(prim2.dado) < 0) {
+                aux = new Elo(prim1.dado);
                 prim1 = prim1.prox;
 
                 if (ult == null) {
-                    diferenca.prim = q;
+                    diferenca.prim = aux;
                 } else {
-                    ult.prox = q;
+                    ult.prox = aux;
                 }
 
-                ult = q;
-            } else if (prim2.dado.compareTo(prim1.dado) < 0) {
-                prim2 = prim2.prox;
-            } else {
-                prim1 = prim1.prox;
+                ult = aux;
+            } else { // if prim2.dado.compareTo(prim1.dado) < 0
                 prim2 = prim2.prox;
             }
         }
-
         return diferenca;
     }
+
 
     // QUESTÃO 05 - LISTA 06
     boolean igualdadeConjuntos(ConjGenerico<T> conj2) {

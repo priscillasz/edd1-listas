@@ -1,12 +1,14 @@
 package estruturadados.lista06;
 
-/* 6. Dado 2 conjuntos “A” e “B”, temos por De Morgan (A U B)c -> AC B ⋂ C. Faça um
-método estático de modelo calculaDeMorgan(conjGenerico<T> A, conjGenerico<T>
-B, ConjGenerico<T> universo) que retorna a interseção do complemento de A e do
-complemento de B. */
+    /* 6. Dado 2 conjuntos “A” e “B”, temos por De Morgan (A U B)c -> AC B ⋂ C. Faça um
+    método estático de modelo calculaDeMorgan(conjGenerico<T> A, conjGenerico<T>
+    B, ConjGenerico<T> universo) que retorna a interseção do complemento de A e do
+    complemento de B. */
 
 public class Ex06 {
     // Complexidade:
+    // o método intersecao() percorre os conjuntos de forma paralela
+    // o método complementar()
 
     public static void main(String[] args) {
         ConjGenerico<Integer> conj1 = new ConjGenerico<>();
@@ -49,6 +51,5 @@ public class Ex06 {
 
         System.out.println("Interseção dos complementos de A e B:");
         deMorganIntersec.imprime();
-
     }
 }

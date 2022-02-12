@@ -215,10 +215,9 @@ public class Conj
 
         Elo ultimo = prim;
 
-        /*while (ultimo.prox != null) {
+        while (ultimo.prox != null) {
             ultimo = ultimo.prox;
-        }*/
-
+        }
 
         return ultimo.dado;
     }

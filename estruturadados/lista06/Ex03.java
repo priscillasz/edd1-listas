@@ -1,9 +1,9 @@
 package estruturadados.lista06;
 
-/* 3. A partir da versão de ConjGenerico criada no exercício 2, desenvolva um método
-boolean subconjunto(ConjGenerico<T> conj2) que receba outro conjunto e retorne o
-true se o conjunto cujo método foi chamado é subconjunto próprio de conj2 e false
-em caso contrário. */
+    /* 3. A partir da versão de ConjGenerico criada no exercício 2, desenvolva um método
+    boolean subconjunto(ConjGenerico<T> conj2) que receba outro conjunto e retorne o
+    true se o conjunto cujo método foi chamado é subconjunto próprio de conj2 e false
+    em caso contrário. */
 
 public class Ex03 {
     // Complexidade: O(n), em que n é o tamanho do conjunto (conj2) que contém ou não contém o outro conjunto (subconjunto conj1).

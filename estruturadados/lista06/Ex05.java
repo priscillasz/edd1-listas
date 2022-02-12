@@ -1,8 +1,8 @@
 package estruturadados.lista06;
 
-/* 5. Crie uma lógica recursiva para um método retornar true se dois conjuntos forem
-iguais, ou false caso contrário. Utilize o esqueleto (boolean
-igualdadeConjuntos(ConjGenerico<T> conj2)) */
+    /* 5. Crie uma lógica recursiva para um método retornar true se dois conjuntos forem
+    iguais, ou false caso contrário. Utilize o esqueleto (boolean
+    igualdadeConjuntos(ConjGenerico<T> conj2)) */
 
 public class Ex05 {
     // Complexidade: O(n), linear, em que n é o tamanho da menor lista entre as duas. A comparação
