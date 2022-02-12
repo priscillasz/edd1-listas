@@ -1,7 +1,6 @@
 package estruturadados.lista06;
 
-public class ConjGenerico<T extends Comparable<T>>
-{
+public class ConjGenerico<T extends Comparable<T>> {
     private Elo prim;  /* Referência para primeiro elemento. */
 
     /* Classe auxiliar para guardar cada elemento do conjunto. */
