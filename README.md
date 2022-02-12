@@ -3,3 +3,4 @@ Exercícios realizados para a disciplina de Estrutura de Dados I, abrangendo os 
 - Pilhas
 - Filas
 - Listas Encadeadas
+- Conjuntos
