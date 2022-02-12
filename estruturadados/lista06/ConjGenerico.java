@@ -240,6 +240,8 @@ public class ConjGenerico<T extends Comparable<T>>
         System.out.println();
     }
 
+    ////////////////////////////////////////////
+
     // QUESTÃO 02 - LISTA 06
     ConjGenerico<T> complementar(ConjGenerico<T> universo) {
 
@@ -274,6 +276,22 @@ public class ConjGenerico<T extends Comparable<T>>
 
     // QUESTÃO 03 - LISTA 06
     boolean subconjunto(ConjGenerico<T> conj2) {
+
+        Elo prim1 = this.prim;
+        Elo prim2 = conj2.prim;
+
+        while (prim2 != null) {
+            if (prim1.dado.compareTo(prim2.dado) == 0) {
+                if (prim1.prox != null) {
+                    prim2 = prim2.prox;
+                    prim1 = prim1.prox;
+                } else {
+                    return true;
+                }
+            } else if (prim2.dado.compareTo(prim1.dado) != 0) {
+                prim2 = prim2.prox;
+            }
+        }
 
         return false;
     }
